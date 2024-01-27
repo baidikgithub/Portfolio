@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experiences Landing Page</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(backgroundimage.avif);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            background-color: grey;
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            z-index: -1;
+        }
+
+        header {
+            text-align: center;
+
+        }
+
+       
+
+        .experience {
+            margin-bottom: 30px;
+            border: 2px solid #ddd;
+            padding: 15px;
+            border-radius: 10px;
+            text-align: center;
+        }
+        p img{
+            border-radius: 50%;
+            height: 45px;
+            width: 45px;
+            /* display: inline-block; */
+            vertical-align: middle;
+        }
+
+        @media (max-width: 600px) {
+            /* Adjust styles for smaller screens */
+            p img {
+                height: 30px;
+                width: 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>My Experiences</h1>
+    </header>
+    <div class="experience">
+        <h3>Administrator</h3>
+        <p><img src="adtu.jpg" alt="">  Adtu A-Connect App Student Council | 10/2023-Present</p>
+        <p>A-Connect, the official student interface app of Assam Down Town University, entails managing the
+            backend af app operations, app development, and executing social media campaigns within the university
+            community using the A-Connect app.</p>
+    </div>
+    <div class="experience">
+        <h3>Web Development Intern</h3>
+        <p><img src="bharat intern.png" alt="">  Bharat Intern | 10/2023-Present</p>
+        <p>Had experience of building responsive web layouts and designs for website.</p>
+        <p>Skills: HTML, CSS, JavaScript</p>
+    </div>
+
+    <div class="experience">
+        <h3>Practical Training</h3>
+        <p><img src="biotech park.jpg" alt="">  Guwahati Biotech Park | 03/2023-03/2023</p>
+        <p>Protein Extraction, Purification, FPLC (Fast Protein Liquid Chromatography) Analysis, SDS-PAGE (Sodium
+            Dodecyl-sulfate polyacrylamide gel electrophoresis) Technique</p>
+        <p>Skills: Research skills</p>
+    </div>
+
+    <div class="experience">
+        <h3>Practical Training</h3>
+        <p><img src="gauhati university.jpg" alt="">  Gauhati University | 02/2023-02/2023</p>
+        
+            Theoretical aspects of molecular modeling,
+            Working with modeler of protein structure modeling,
+            Properties of small molecules drug likeness,
+            Structure-based and ligand-based drug designing
+        
+        <p>Skills: Research skills</p>
+    </div>
+</body>
+
+</html>

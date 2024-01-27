@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Skills Landing Page</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"/>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(backgroundimage.avif);
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            color: white;
+            background-color: grey;
+        }
+        body::before{
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.7);
+            z-index: -1;
+        }
+
+    
+
+        header {
+            background-color: transparent;
+            text-align: center;
+            padding: 20px;
+        }
+
+        h1 {
+            margin: 0;
+        }
+
+        p {
+            margin: 5px 0;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            justify-content: center;
+        }
+
+        .skill {
+            display:inline-block;
+            margin: 10px;
+            text-align: center;
+            border: 1px solid;
+            padding: 4px;
+            margin: 4px;
+            
+        }
+
+
+        p {
+            margin: 5px 0;
+        }
+        @media screen and (max-width: 768px) {
+            section {
+                padding: 10px;
+            }
+
+            .skill {
+                margin: 5px;
+                padding: 2px;
+            }
+
+            img {
+                width: 30px;
+                height: 30px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            h2 {
+                font-size: 1.5em;
+            }
+
+            .skill {
+                margin: 3px;
+                padding: 2px;
+            }
+
+            img {
+                width: 25px;
+                height: 25px;
+            }
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>Skills</h1>
+        <p>Here are some of my skills on which I have been working on</p>
+    </header>
+
+    <section id="frontend">
+        <h2>Frontend Skills</h2>
+        <div class="skill">
+            <p><i class="fa-brands fa-html5"></i> HTML </p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-css3"></i> CSS </p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-js"></i> JavaScript</p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-react"></i> React.js</p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-bootstrap"></i> Bootstrap</p>
+        </div>
+        
+    </section>
+
+    <section id="backend">
+        <h2>Backend Skills</h2>
+        <div class="skill">
+            
+            <p><i class="fa-brands fa-node"></i> Node.js</p>
+        </div>
+        <div class="skill">
+            
+            <p>MongoDB</p>
+        </div>
+        <div class="skill">
+            
+            <p><i class="fa-brands fa-python"></i> Python</p>
+        </div>
+    </section>
+    <section id="Language">
+        <h2>Language</h2>
+        <div class="skill">
+            
+            <p>C</p>
+        </div>
+        <div class="skill">
+            
+            <p><i class="fa-brands fa-python"></i> Python</p>
+        </div>
+        <div class="skill">
+            
+            <p><i class="fa-brands fa-js"></i> JavaScript</p>
+        </div>
+    </section>
+
+    <section id="other-skills">
+        <h2>Other Skills</h2>
+        <div class="skill">
+            
+            <p><i class="fa-brands fa-researchgate"></i> Research Skills</p>
+        </div>
+        <div class="skill">
+            
+            <p><i class="fa-solid fa-capsules"></i></i> Drug Design</p>
+        </div>
+        <div class="skill">
+            
+            <p>Molecular Modelling</p>
+        </div>
+        <div class="skill">
+           
+            <p>Canva</p>
+        </div>
+        <div class="skill">
+            
+            <p>VS Code</p>
+        </div>
+        <div class="skill">
+            
+            <p><i class="fa-brands fa-github"></i> GitHub</p>
+        </div>
+        
+    </section>
+
+    
+</body>
+
+</html>
+
+</body>
+
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About</title>
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url(backgroundimage.avif);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        background-color: grey;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+    header{
+        text-align: center;
+    }
+    section img{
+        border-radius: 50%;
+        height: 155px;
+        width: 155px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    p{
+        text-align: center;
+    }
+    @media screen and (max-width: 768px) {
+            section img {
+                height: 120px;
+                width: 120px;
+            }
+
+            p {
+                font-size: 0.9em;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            section img {
+                height: 100px;
+                width: 100px;
+            }
+
+            p {
+                font-size: 0.8em;
+            }
+        }
+</style>
+
+<body>
+    <header>
+        <h1>About</h1>
+    </header>
+    <section>
+        <img src="photo.jpg" alt="">
+    </section>
+
+    <p>As a biotechnology student at Assam Down Town University. I am passionate about learning new technologies
+        and applyimg them to solve real-world problems. I have completed multiple certfications in Python, Data
+        Science, and Front-End Development, and have gained hands-on experience in web development and app
+        administration through various internships and projects. <br>
+        I am detail-oriented, anlytical, and driven person who seeks challenging opportunities to fully use
+        my skills and knowledge and make a meaningful impact in the field. I am also responsible, creative, open
+        minded, friendly, and ambitious. I am always eager to learn new things and stay abreast of the latest
+        advancements. My goal is to pursue a career that combines my interests in biotechnology, web development
+        and data science, and to contribute to the advancement of science and society.
+    </p>
+
+</body>
+
+</html>

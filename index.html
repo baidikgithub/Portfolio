@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" />
+</head>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-image: url(backgroundimage.avif);
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        color: white;
+        background-color: grey;
+    }
+
+    body::before {
+        content: "";
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(0, 0, 0, 0.7);
+        z-index: -1;
+    }
+
+    .hamburger-container {
+        display: none;
+
+        cursor: pointer;
+        padding: 10px;
+    }
+
+    .hamburger-container i {
+        font-size: 24px;
+    }
+
+
+    .nav-menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        background: rgba(42, 39, 39, 0.7);
+    }
+
+    .nav-menu a {
+        color: #fff;
+        text-decoration: none;
+        margin: 0 10px;
+        font-size: 18px;
+    }
+
+
+    @media (max-width: 768px) {
+        .hamburger-container {
+            display: block;
+        }
+
+        .nav-menu {
+            display: none;
+
+            flex-direction: column;
+            background-color: rgba(0, 0, 0, 0.7);
+            position: absolute;
+            top: 60px;
+
+            left: 0;
+            width: 100%;
+            z-index: 1;
+        }
+
+        .nav-menu a {
+            margin: 10px 0;
+        }
+
+        .nav-menu.active {
+            display: flex;
+        }
+    }
+
+    .logo {
+
+        height: 194px;
+        border-radius: 50%;
+    }
+
+    .heading {
+        text-align: center;
+        padding: 80px;
+
+    }
+
+
+    .about {
+        text-align: center;
+    }
+
+    .experience {
+        margin-bottom: 30px;
+        border: 2px solid #ddd;
+        padding: 15px;
+        border-radius: 10px;
+        text-align: center;
+    }
+
+    p img {
+        border-radius: 50%;
+        height: 45px;
+        width: 45px;
+        vertical-align: middle;
+    }
+
+    .myExperiences h1 {
+        text-align: center;
+        padding: 30px;
+    }
+
+    .container {
+        max-width: 1200px;
+        margin: 20px auto;
+        display: flex;
+        justify-content: space-around;
+
+    }
+
+    .education-box {
+        width: 30%;
+        margin: 20px;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+
+        color: black;
+    }
+
+
+    .text-gray {
+        color: rgb(121, 116, 116);
+    }
+
+    h1 {
+        text-align: center;
+    }
+
+    .container img {
+        border-radius: 50%;
+        height: 85px;
+        width: 85px;
+        display: block;
+        margin-left: auto;
+        margin-right: auto;
+
+
+    }
+
+
+    section {
+        text-align: center;
+        margin: 25px;
+    }
+
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+    }
+
+    label {
+        display: block;
+        margin-bottom: 8px;
+    }
+
+    input,
+    textarea {
+        width: 100%;
+        padding: 8px;
+        margin-bottom: 16px;
+        box-sizing: border-box;
+    }
+
+    button {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 15px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+
+    .socialIcons {
+        font-size: 30px;
+        padding: 20px;
+        width: 100%;
+
+    }
+
+    .socialIcons a {
+        padding: 20px;
+        margin: 20px;
+        color: white;
+    }
+
+    footer {
+        background: rgba(42, 39, 39, 0.7);
+    }
+
+    .footerBottom {
+        background-color: #000;
+        padding: 20px;
+        text-align: center;
+    }
+
+    .footerBottom p {
+        color: white;
+    }
+
+    .contactMe {
+        text-align: center;
+    }
+
+    .certification-container {
+        width: 80%;
+        max-width: 600px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        transition: box-shadow 0.3s;
+        position: relative;
+        color: black;
+    }
+
+    .certification-container:hover {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
+    }
+
+    .certification-title {
+        font-size: 1.5em;
+        font-weight: bold;
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+    }
+
+    .certification-icon {
+        width: 30px;
+        height: 30px;
+        margin-right: 10px;
+    }
+
+    .certification-description {
+        font-size: 1em;
+        color: #555;
+        margin-bottom: 20px;
+    }
+
+    .download-button {
+        display: block;
+        padding: 10px;
+        background-color: #333;
+        color: #fff;
+        text-decoration: none;
+        text-align: center;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .download-button:hover {
+        background-color: #555;
+    }
+
+
+    section {
+        padding: 20px;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .skill {
+        display: inline-block;
+        margin: 10px;
+        text-align: center;
+        border: 1px solid;
+        padding: 4px;
+        margin: 4px;
+
+    }
+
+
+
+    p {
+        margin: 5px 0;
+        text-align: center;
+    }
+
+    .heading button {
+        text-decoration: underline;
+        background-color: white;
+        padding: 10px;
+        margin: 10px;
+        font-size: 15px;
+    }
+    .heading button a{
+        color: black;
+    }
+    .heading button a:hover{
+        color: white;
+    }
+    .heading button:hover{
+        background-color:  rgba(42, 39, 39, 0.7);
+    }
+
+    @media only screen and (max-width: 768px) {
+        .heading {
+            padding: 40px;
+        }
+
+        .logo {
+            height: 120px;
+        }
+    }
+
+    @media only screen and (max-width: 600px) {
+        .heading {
+            padding: 20px;
+        }
+
+        .logo {
+            height: 80px;
+        }
+    }
+    .volunteering p img{
+        height: 28px;
+        width: 28px;
+        border-radius: 50%;
+    }
+    
+</style>
+
+<body>
+    <div class="hamburger-container">
+        <i class="fas fa-bars"></i>
+    </div>
+
+
+    <nav class="nav-menu">
+        <a href="home.html">Home</a>
+        <a href="about.html">About</a>
+        <a href="experience.html">Experience</a>
+
+        <a href="education.html">Education</a>
+        <a href="skill.html">Skills</a>
+        <a href="certification.html">Certifications</a>
+        <a href="contact.html">Contact Me</a>
+    </nav>
+    <h1>Portfolio</h1>
+
+
+    <section class="heading">
+        <img src="photo.jpg" alt="Your Startup Logo" class="logo">
+        <h1>Hi, I am Baidik Mazumdar</h1>
+        <p>Biotech Student | Python Developer | Web Development | Full Stack Developer | Hands-on Training at Gauhati
+            University and Guwahati Biotech Park | Administrator - "A-Connect"</p>
+        <button><a href="My Resume (7).pdf">Download CV</a></button>
+        <button><a href="https://github.com/baidikgithub">Visit GitHub</a></button>
+    </section>
+
+
+    <section class="about">
+        <h1>About</h1>
+
+        <p>As a biotechnology student at Assam Down Town University. I am passionate about learning new technologies
+            and applyimg them to solve real-world problems. I have completed multiple certfications in Python, Data
+            Science, and Front-End Development, and have gained hands-on experience in web development and app
+            administration through various internships and projects. <br>
+            I am detail-oriented, anlytical, and driven person who seeks challenging opportunities to fully use
+            my skills and knowledge and make a meaningful impact in the field. I am also responsible, creative, open
+            minded, friendly, and ambitious. I am always eager to learn new things and stay abreast of the latest
+            advancements. My goal is to pursue a career that combines my interests in biotechnology, web development
+            and data science, and to contribute to the advancement of science and society.
+        </p>
+    </section>
+    <section class="myExperiences">
+        <h1>My Experiences</h1>
+
+        <div class="experience">
+            <h3>Administrator</h3>
+            <p><img src="adtu.jpg" alt=""> Adtu A-Connect App Student Council | 10/2023-Present</p>
+            <p>A-Connect, the official student interface app of Assam Down Town University, entails managing the
+                backend af app operations, app development, and executing social media campaigns within the university
+                community using the A-Connect app.</p>
+        </div>
+        <div class="experience">
+            <h3>Web Development Intern</h3>
+            <p><img src="bharat intern.png" alt=""> Bharat Intern | 10/2023-Present</p>
+            <p>Had experience of building responsive web layouts and designs for website.</p>
+            <p>Skills: HTML, CSS, JavaScript</p>
+        </div>
+
+        <div class="experience">
+            <h3>Practical Training</h3>
+            <p><img src="biotech park.jpg" alt=""> Guwahati Biotech Park | 03/2023-03/2023</p>
+            <p>Protein Extraction, Purification, FPLC (Fast Protein Liquid Chromatography) Analysis, SDS-PAGE (Sodium
+                Dodecyl-sulfate polyacrylamide gel electrophoresis) Technique</p>
+            <p>Skills: Research skills</p>
+        </div>
+
+        <div class="experience">
+            <h3>Practical Training</h3>
+            <p><img src="gauhati university.jpg" alt=""> Gauhati University | 02/2023-02/2023</p>
+
+            Theoretical aspects of molecular modeling,
+            Working with modeler of protein structure modeling,
+            Properties of small molecules drug likeness,
+            Structure-based and ligand-based drug designing
+
+            <p>Skills: Research skills</p>
+        </div>
+    </section>
+    <h1>Education</h1>
+
+
+    <div class="container">
+        <div class="education-box">
+            <img src="adtu.jpg" alt="">
+            <h2>Assam Down Town University</h2>
+            <span class="text-gray">Bachelor of Science, Biotechnology</span>
+
+            <span class="text-gray">2021-Present</span>
+            <p>Activities and societies:Art club, Music club, Literary club, Robotics
+                team, Sports club
+            </p>
+            <p>Skills: Research skills, Communication, Organization skills, Teamwork</p>
+
+        </div>
+
+        <div class="education-box">
+            <img src="ramanuj.jpg" alt="">
+
+            <h2>Ramanuj Gupta Senior Secondary School</h2>
+            <span class="text-gray">Higher Secondary, Science stream</span>
+
+            <span class="text-gray">2020-2021</span>
+
+            <p>Activities and societies: Science club
+            </p>
+            <p>Skills: Research skills, Communication, Organization skills, Teamwork</p>
+        </div>
+
+
+        <div class="education-box">
+            <img src="don bosco.jpg" alt="">
+
+            <h2>Don Bosco Higher Secondary School</h2>
+            <span class="text-gray">High School</span>
+
+            <span class="text-gray">2018-2019</span>
+
+            <p>Activities and societies: Science club
+            </p>
+
+            <p>Skills: Research skills, Communication, Organization skills, Teamwork</p>
+
+        </div>
+    </div>
+    <h1>Skills</h1>
+    <p>Here are some of my skills on which I have been working on</p>
+
+    <section id="frontend">
+        <h2>Frontend Skills</h2>
+        <div class="skill">
+            <p><i class="fa-brands fa-html5"></i> HTML </p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-css3"></i> CSS </p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-js"></i> JavaScript</p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-react"></i> React.js</p>
+        </div>
+        <div class="skill">
+            <p><i class="fa-brands fa-bootstrap"></i> Bootstrap</p>
+        </div>
+
+    </section>
+
+    <section id="backend">
+        <h2>Backend Skills</h2>
+        <div class="skill">
+
+            <p><i class="fa-brands fa-node"></i> Node.js</p>
+        </div>
+        <div class="skill">
+
+            <p>MongoDB</p>
+        </div>
+        <div class="skill">
+
+            <p><i class="fa-brands fa-python"></i> Python</p>
+        </div>
+    </section>
+    <section id="Language">
+        <h2>Language</h2>
+        <div class="skill">
+
+            <p>C</p>
+        </div>
+        <div class="skill">
+
+            <p><i class="fa-brands fa-python"></i> Python</p>
+        </div>
+        <div class="skill">
+
+            <p><i class="fa-brands fa-js"></i> JavaScript</p>
+        </div>
+    </section>
+
+    <section id="other-skills">
+        <h2>Other Skills</h2>
+        <div class="skill">
+
+            <p><i class="fa-brands fa-researchgate"></i> Research Skills</p>
+        </div>
+        <div class="skill">
+
+            <p><i class="fa-solid fa-capsules"></i></i> Drug Design</p>
+        </div>
+        <div class="skill">
+
+            <p>Molecular Modelling</p>
+        </div>
+        <div class="skill">
+
+            <p>Canva</p>
+        </div>
+        <div class="skill">
+
+            <p>VS Code</p>
+        </div>
+        <div class="skill">
+
+            <p><i class="fa-brands fa-github"></i> GitHub</p>
+        </div>
+
+    </section>
+    <h1>Certifications</h1>
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="coursera.png" alt="Certificate Icon">
+            Financial Markets
+        </div>
+        <div class="certification-description">
+            <p>Explore global finance in Coursera's 'Financial Markets' course, covering market structures to risk
+                management. Engaging instructors and practical applications provide a solid foundation for navigating
+                financial landscapes.</p>
+        </div>
+        <a href="photo.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="infosys springboard.avif" alt="Certificate Icon">
+            Front-End Development
+        </div>
+        <div class="certification-description">
+            <p>Infosys Springboard's frontend development program provides thorough training in modern web technologies,
+                enabling learners to master HTML, CSS, JavaScript, and frameworks for creating dynamic and user-friendly
+                interfaces.</p>
+        </div>
+        <a href="infosys cer.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="heredity biosciences.jpg" alt="Certificate Icon">
+            Ralstonia solanacearum: A soil born hidden enemy of the plants
+        </div>
+        <div class="certification-description">
+            <p>Ralstonia solanacearum, a soil-borne pathogen, poses a covert threat to plants, stealthily undermining
+                their vitality and resilience, as revealed by Heredity Biosciences.</p>
+        </div>
+        <a href="heredity cer.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="great learning.png" alt="Certificate Icon">
+            Python Fundamentals for Beginners
+        </div>
+        <div class="certification-description">
+            <p>Great Learning's Python Fundamentals for Beginners provides a comprehensive introduction to the core
+                concepts of Python programming, equipping novices with essential skills through hands-on exercises and
+                real-world applications, paving the way for a solid foundation in coding.</p>
+        </div>
+        <a href="greatlearning cer.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="assam science and technology.png" alt="Certificate Icon">
+            Environment Sustainability: Industrialization and Health Issues
+        </div>
+        <div class="certification-description">
+            <p>Assam Science Technology and Environment Council investigates the nexus of industrialization and health issues, emphasizing
+                environmental sustainability and showcasing pioneering research for a balanced coexistence.</p>
+        </div>
+        <a href="assam cer.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="edureka.png" alt="Certificate Icon">
+            Data Science and Machine Learning Internship Program
+        </div>
+        <div class="certification-description">
+            <p>Edureka's internship equips participants with hands-on experience and mentorship in data science and
+                machine learning, fostering skills essential for success in these dynamic fields.</p>
+        </div>
+        <a href="edureka cer.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="mangalore university.png" alt="Certificate Icon">
+            Integrated Microbial and Biotechnological Approaches for Scientific Advancements
+        </div>
+        <div class="certification-description">
+            <p>Mangalore University leads the way in advancing scientific knowledge through Integrated Microbial and
+                Biotechnological Approaches, fostering cutting-edge research at the intersection of microbiology and
+                biotechnology for groundbreaking advancements.</p>
+        </div>
+        <a href="mangalore cer.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+    <div class="certification-container">
+        <div class="certification-title">
+            <img class="certification-icon" src="heredity biosciences.jpg" alt="Certificate Icon">
+            Insights to Breast Cancer Research
+        </div>
+        <div class="certification-description">
+            <p>Heredity Biosciences unveils genetic nuances in breast cancer, offering pivotal insights for
+                revolutionary research, enhancing our grasp on genetic influences and personalized treatment approaches.
+            </p>
+        </div>
+        <a href="heredity2 cer.jpg" class="download-button" download>Download Certificate</a>
+    </div>
+    
+    <section>
+        <h1>Languages</h1>
+
+        <ul>English</ul>
+        <ul>Hindi</ul>
+        <ul>Bengali</ul>
+        <ul>Assamese</ul>
+
+    </section>
+    <section>
+        <h1>Honors and Awards</h1>
+        <p>National Children's Science Congress (District Topper)</p>
+        <p> City rank-1 in National children's science congress in the year 2017. I was awarded with GOLD MEDAL by the
+            principal of our school.</p>
+    </section>
+    <section class="volunteering">
+        <h1>Volunteering</h1>
+        <p><img src="logo (2).jpg" alt=""> Aarya Youth Organisation</p>
+        <p>I am active member of Aarya Youth Organisation, a non-governmental Organisation (NGO) registered under Registered under Societies Act of XXI of 1860
+            RS/CA/243/R/16 of 2023-24, and I am actively engaged in contributing to the organisation's initiatives.</p>
+
+    </section>
+
+
+
+    <section class="contactMe">
+        <h1>Contact Me</h1>
+        <form action="#" method="post">
+            <label for="name"><i class="fa-solid fa-user"></i> Name:</label>
+            <input type="text" id="name" name="name" placeholder="Enter your name" required>
+
+            <label for="email"><i class="fa-solid fa-envelope"></i> Email:</label>
+            <input type="email" id="email" name="email" placeholder="Enter your email" required>
+
+            <label for="phone"><i class="fa-solid fa-phone"></i> Phone Number:</label>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" placeholder="Enter 10-digit phone number"
+                required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" rows="4" required></textarea>
+
+            <button type="submit">Send Message</button>
+        </form>
+    </section>
+    <footer>
+        <section>
+            <div class="socialIcons">
+                <a href=""><i class="fa-brands fa-facebook"></i></a>
+                <a href=""><i class="fa-brands fa-instagram"></i></a>
+                <a href=""><i class="fa-brands fa-twitter"></i></a>
+                <a href=""><i class="fa-brands fa-linkedin"></i></a>
+            </div>
+        </section>
+        <section>
+            <p><i class="fa-solid fa-location-dot"></i> Address: Hagjer Nagar, Haflong, Dima Hasao, Assam, India,
+                788819</p>
+            <p><i class="fa-solid fa-envelope"></i> Email: baidikmazumdar01@gmail.com</p>
+        </section>
+        <div class="footerBottom">
+            <p>Copyright &copy;2024; Designed by <span class="designer">Baidik</span></p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const hamburgerIcon = document.querySelector('.hamburger-container');
+            const navMenu = document.querySelector('.nav-menu');
+
+            hamburgerIcon.addEventListener('click', function () {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
+
+</body>
+
+</html>
